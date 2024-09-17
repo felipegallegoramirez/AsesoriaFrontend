@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ATProfesionalesComponent {
   form: FormGroup;
-  programas: any[] = []; // Aquí deberías cargar los programas disponibles
+  programas: any[] = [];
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
@@ -21,14 +21,11 @@ export class ATProfesionalesComponent {
   }
 
   ngOnInit() {
-    // Aquí deberías cargar los programas disponibles
-    // this.loadProgramas();
   }
 
   onSubmit() {
     if (this.form.valid) {
       console.log(this.form.value);
-      // Aquí puedes enviar los datos al servidor
     } else {
       console.log('Formulario inválido');
     }

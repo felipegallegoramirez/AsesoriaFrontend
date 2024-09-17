@@ -19,18 +19,11 @@ export class AProfesionalComponent implements OnInit{
   }
 
   ngOnInit() {
-    // Aquí deberías cargar los programas desde tu servicio
-    this.programas = [
-      { id: '1', nombre: 'Programa 1' },
-      { id: '2', nombre: 'Programa 2' },
-      // ... más programas
-    ];
   }
 
   onSubmit() {
     if (this.form.valid) {
       console.log(this.form.value);
-      // Aquí deberías enviar los datos a tu servicio
     } else {
       console.log('Formulario inválido');
     }

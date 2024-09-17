@@ -1,1 +1,32 @@
-<p>vagregado works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="id_programa">Programa:</label>
+      <select id="id_programa" formControlName="id_programa">
+        <option value="">Seleccione un programa</option>
+        <option *ngFor="let programa of programas" [value]="programa.id">{{programa.nombre}}</option>
+      </select>
+      <div *ngIf="form.get('id_programa')?.errors && form.get('id_programa')?.touched">
+        <small *ngIf="form.get('id_programa')?.errors?.['required']">El programa es requerido</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="id">ID:</label>
+      <input id="id" type="text" formControlName="id" maxlength="50">
+      <div *ngIf="form.get('id')?.errors && form.get('id')?.touched">
+        <small *ngIf="form.get('id')?.errors?.['required']">El ID es requerido</small>
+        <small *ngIf="form.get('id')?.errors?.['maxlength']">El ID no puede tener más de 50 caracteres</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="v_agregado">Valor Agregado:</label>
+      <input id="v_agregado" type="text" formControlName="v_agregado" maxlength="500">
+      <div *ngIf="form.get('v_agregado')?.errors && form.get('v_agregado')?.touched">
+        <small *ngIf="form.get('v_agregado')?.errors?.['required']">El valor agregado es requerido</small>
+        <small *ngIf="form.get('v_agregado')?.errors?.['maxlength']">El valor agregado no puede tener más de 500 caracteres</small>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="!form.valid">Enviar</button>
+  </form>
