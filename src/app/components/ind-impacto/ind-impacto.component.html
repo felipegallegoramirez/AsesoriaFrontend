@@ -1,1 +1,40 @@
-<p>ind-impacto works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="resultado_ap">Resultado AP:</label>
+      <input id="resultado_ap" type="text" formControlName="resultado_ap" maxlength="600">
+      <div *ngIf="form.get('resultado_ap')?.errors && form.get('resultado_ap')?.touched">
+        <small *ngIf="form.get('resultado_ap')?.errors?.['required']">El resultado AP es requerido</small>
+        <small *ngIf="form.get('resultado_ap')?.errors?.['maxlength']">Máximo 600 caracteres</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="estrategia_programa">Estrategia Programa:</label>
+      <input id="estrategia_programa" type="text" formControlName="estrategia_programa" maxlength="100">
+      <div *ngIf="form.get('estrategia_programa')?.errors && form.get('estrategia_programa')?.touched">
+        <small *ngIf="form.get('estrategia_programa')?.errors?.['required']">La estrategia del programa es requerida</small>
+        <small *ngIf="form.get('estrategia_programa')?.errors?.['maxlength']">Máximo 100 caracteres</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="ind_impacto">Indicador de Impacto:</label>
+      <input id="ind_impacto" type="text" formControlName="ind_impacto" maxlength="200">
+      <div *ngIf="form.get('ind_impacto')?.errors && form.get('ind_impacto')?.touched">
+        <small *ngIf="form.get('ind_impacto')?.errors?.['required']">El indicador de impacto es requerido</small>
+        <small *ngIf="form.get('ind_impacto')?.errors?.['maxlength']">Máximo 200 caracteres</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="id_programa">ID Programa:</label>
+      <select id="id_programa" formControlName="id_programa">
+        <option *ngFor="let programa of programas" [value]="programa.id">{{programa.nombre}}</option>
+      </select>
+      <div *ngIf="form.get('id_programa')?.errors && form.get('id_programa')?.touched">
+        <small *ngIf="form.get('id_programa')?.errors?.['required']">El ID del programa es requerido</small>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="!form.valid">Enviar</button>
+  </form>
