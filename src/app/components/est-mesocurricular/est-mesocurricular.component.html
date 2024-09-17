@@ -1,1 +1,34 @@
-<p>est-mesocurricular works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="resultado_ap">Resultado de aprendizaje:</label>
+      <textarea id="resultado_ap" formControlName="resultado_ap" maxlength="600"
+                [title]="'Ingrese el resultado de aprendizaje (máximo 600 caracteres)'"></textarea>
+      <div *ngIf="form.get('resultado_ap')?.errors && form.get('resultado_ap')?.touched">
+        <small *ngIf="form.get('resultado_ap')?.errors?.['required']">El resultado de aprendizaje es requerido</small>
+        <small *ngIf="form.get('resultado_ap')?.errors?.['maxlength']">Máximo 600 caracteres</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="estrategia_programa">Estrategia del programa:</label>
+      <select id="estrategia_programa" formControlName="estrategia_programa">
+        <option value="">Seleccione una estrategia</option>
+        <option *ngFor="let estrategia of estrategias" [value]="estrategia">{{estrategia}}</option>
+      </select>
+      <div *ngIf="form.get('estrategia_programa')?.errors && form.get('estrategia_programa')?.touched">
+        <small *ngIf="form.get('estrategia_programa')?.errors?.['required']">La estrategia del programa es requerida</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="descripcion">Descripción:</label>
+      <textarea id="descripcion" formControlName="descripcion" maxlength="600"
+                [title]="'Ingrese la descripción (máximo 600 caracteres)'"></textarea>
+      <div *ngIf="form.get('descripcion')?.errors && form.get('descripcion')?.touched">
+        <small *ngIf="form.get('descripcion')?.errors?.['required']">La descripción es requerida</small>
+        <small *ngIf="form.get('descripcion')?.errors?.['maxlength']">Máximo 600 caracteres</small>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="!form.valid">Enviar</button>
+  </form>
