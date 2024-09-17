@@ -1,1 +1,34 @@
-<p>form works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" type="text" formControlName="nombre" 
+             [title]="'Ingrese solo letras y espacios'">
+      <div *ngIf="form.get('nombre')?.errors && form.get('nombre')?.touched">
+        <small *ngIf="form.get('nombre')?.errors?.['required']">El nombre es requerido</small>
+        <small *ngIf="form.get('nombre')?.errors?.['pattern']">Solo se permiten letras y espacios</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="edad">Edad:</label>
+      <input id="edad" type="number" formControlName="edad" 
+             [title]="'Ingrese una edad entre 18 y 120 años'">
+      <div *ngIf="form.get('edad')?.errors && form.get('edad')?.touched">
+        <small *ngIf="form.get('edad')?.errors?.['required']">La edad es requerida</small>
+        <small *ngIf="form.get('edad')?.errors?.['min']">La edad mínima es 18 años</small>
+        <small *ngIf="form.get('edad')?.errors?.['max']">La edad máxima es 120 años</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="email">Email:</label>
+      <input id="email" type="email" formControlName="email" 
+             [title]="'Ingrese un email válido'">
+      <div *ngIf="form.get('email')?.errors && form.get('email')?.touched">
+        <small *ngIf="form.get('email')?.errors?.['required']">El email es requerido</small>
+        <small *ngIf="form.get('email')?.errors?.['email']">Ingrese un email válido</small>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="!form.valid">Enviar</button>
+  </form>
