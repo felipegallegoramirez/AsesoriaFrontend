@@ -1,10 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-tprofesional',
   templateUrl: './tprofesional.component.html',
   styleUrl: './tprofesional.component.css'
 })
-export class TProfesionalComponent {
+export class TProfesionalComponent implements OnInit {
+  form: FormGroup;
+  programas: any[] = []; // Aquí deberías cargar los programas disponibles
 
+  constructor(private fb: FormBuilder) {
+    this.form = this.fb.group({
+      id_programa: ['', Validators.required],
+      id: ['', [Validators.required, Validators.maxLength(50)]],
+      t_profesional: ['', [Validators.required, Validators.maxLength(300)]]
+    });
+  }
+
+  ngOnInit() {
+    // Aquí deberías cargar los programas disponibles
+    // this.programas = ...
+  }
+
+  onSubmit() {
+    if (this.form.valid) {
+      console.log(this.form.value);
+      // Aquí puedes enviar los datos al servidor
+    } else {
+      console.log('Formulario inválido');
+    }
+  }
 }
