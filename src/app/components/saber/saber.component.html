@@ -1,0 +1,54 @@
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="id_programa">ID Programa:</label>
+    <input id="id_programa" type="text" formControlName="id_programa"
+           [title]="'Ingrese el ID del programa'">
+    <div *ngIf="form.get('id_programa')?.errors && form.get('id_programa')?.touched">
+      <small *ngIf="form.get('id_programa')?.errors?.['required']">El ID del programa es requerido</small>
+      <small *ngIf="form.get('id_programa')?.errors?.['maxlength']">El ID del programa no puede exceder 255 caracteres</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="id">ID:</label>
+    <input id="id" type="text" formControlName="id"
+           [title]="'Ingrese el ID'">
+    <div *ngIf="form.get('id')?.errors && form.get('id')?.touched">
+      <small *ngIf="form.get('id')?.errors?.['required']">El ID es requerido</small>
+      <small *ngIf="form.get('id')?.errors?.['maxlength']">El ID no puede exceder 50 caracteres</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="saber">Saber:</label>
+    <textarea id="saber" formControlName="saber"
+              [title]="'Ingrese el saber'"></textarea>
+    <div *ngIf="form.get('saber')?.errors && form.get('saber')?.touched">
+      <small *ngIf="form.get('saber')?.errors?.['required']">El saber es requerido</small>
+      <small *ngIf="form.get('saber')?.errors?.['maxlength']">El saber no puede exceder 300 caracteres</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="saber_hacer">Saber Hacer:</label>
+    <textarea id="saber_hacer" formControlName="saber_hacer"
+              [title]="'Ingrese el saber hacer'"></textarea>
+    <div *ngIf="form.get('saber_hacer')?.errors && form.get('saber_hacer')?.touched">
+      <small *ngIf="form.get('saber_hacer')?.errors?.['required']">El saber hacer es requerido</small>
+      <small *ngIf="form.get('saber_hacer')?.errors?.['maxlength']">El saber hacer no puede exceder 300 caracteres</small>
+    </div>
+  </div>
+
+  <div>
+    <label for="saber_ser">Saber Ser:</label>
+    <textarea id="saber_ser" formControlName="saber_ser"
+              [title]="'Ingrese el saber ser'"></textarea>
+    <div *ngIf="form.get('saber_ser')?.errors && form.get('saber_ser')?.touched">
+      <small *ngIf="form.get('saber_ser')?.errors?.['required']">El saber ser es requerido</small>
+      <small *ngIf="form.get('saber_ser')?.errors?.['maxlength']">El saber ser no puede exceder 300 caracteres</small>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="!form.valid">Enviar</button>
+</form>
