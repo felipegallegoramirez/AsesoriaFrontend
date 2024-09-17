@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class IndImpactoComponent implements OnInit  {
   form: FormGroup;
-  programas: any[] = []; // Aquí deberías cargar los programas disponibles
+  programas: any[] = [];
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
@@ -20,14 +20,11 @@ export class IndImpactoComponent implements OnInit  {
   }
 
   ngOnInit() {
-    // Aquí deberías cargar los programas disponibles
-    // this.programas = [{ id: 1, nombre: 'Programa 1' }, { id: 2, nombre: 'Programa 2' }];
   }
 
   onSubmit() {
     if (this.form.valid) {
       console.log(this.form.value);
-      // Aquí iría la lógica para enviar los datos al servidor
     } else {
       console.log('Formulario inválido');
     }
