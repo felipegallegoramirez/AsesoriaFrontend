@@ -1,1 +1,50 @@
-<p>atprofesionales works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="id_programa">Programa:</label>
+      <select id="id_programa" formControlName="id_programa">
+        <option value="">Seleccione un programa</option>
+        <option *ngFor="let programa of programas" [value]="programa.id">{{programa.nombre}}</option>
+      </select>
+      <div *ngIf="form.get('id_programa')?.errors && form.get('id_programa')?.touched">
+        <small *ngIf="form.get('id_programa')?.errors?.['required']">El programa es requerido</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="id">ID:</label>
+      <input id="id" type="text" formControlName="id" maxlength="50">
+      <div *ngIf="form.get('id')?.errors && form.get('id')?.touched">
+        <small *ngIf="form.get('id')?.errors?.['required']">El ID es requerido</small>
+        <small *ngIf="form.get('id')?.errors?.['maxlength']">El ID no puede tener más de 50 caracteres</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="areas_profesionales">Áreas Profesionales:</label>
+      <input id="areas_profesionales" type="text" formControlName="areas_profesionales" maxlength="255">
+      <div *ngIf="form.get('areas_profesionales')?.errors && form.get('areas_profesionales')?.touched">
+        <small *ngIf="form.get('areas_profesionales')?.errors?.['required']">Las áreas profesionales son requeridas</small>
+        <small *ngIf="form.get('areas_profesionales')?.errors?.['maxlength']">Las áreas profesionales no pueden tener más de 255 caracteres</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="tareas_profesionales">Tareas Profesionales:</label>
+      <input id="tareas_profesionales" type="text" formControlName="tareas_profesionales" maxlength="255">
+      <div *ngIf="form.get('tareas_profesionales')?.errors && form.get('tareas_profesionales')?.touched">
+        <small *ngIf="form.get('tareas_profesionales')?.errors?.['required']">Las tareas profesionales son requeridas</small>
+        <small *ngIf="form.get('tareas_profesionales')?.errors?.['maxlength']">Las tareas profesionales no pueden tener más de 255 caracteres</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="poblaciones_actuacion">Poblaciones de Actuación:</label>
+      <input id="poblaciones_actuacion" type="text" formControlName="poblaciones_actuacion" maxlength="255">
+      <div *ngIf="form.get('poblaciones_actuacion')?.errors && form.get('poblaciones_actuacion')?.touched">
+        <small *ngIf="form.get('poblaciones_actuacion')?.errors?.['required']">Las poblaciones de actuación son requeridas</small>
+        <small *ngIf="form.get('poblaciones_actuacion')?.errors?.['maxlength']">Las poblaciones de actuación no pueden tener más de 255 caracteres</small>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="!form.valid">Enviar</button>
+  </form>

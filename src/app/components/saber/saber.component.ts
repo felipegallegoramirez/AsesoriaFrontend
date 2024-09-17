@@ -8,6 +8,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SaberComponent {
   form: FormGroup;
+  programas: any[] = [
+    { id: '1', nombre: 'Programa 1' },
+    { id: '2', nombre: 'Programa 2' },
+    { id: '3', nombre: 'Programa 3' }
+  ];
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
