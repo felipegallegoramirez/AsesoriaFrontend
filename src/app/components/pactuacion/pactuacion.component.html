@@ -1,1 +1,32 @@
-<p>pactuacion works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="id_programa">Programa:</label>
+      <select id="id_programa" formControlName="id_programa">
+        <option value="">Seleccione un programa</option>
+        <option *ngFor="let programa of programas" [value]="programa.id">{{programa.nombre}}</option>
+      </select>
+      <div *ngIf="form.get('id_programa')?.errors && form.get('id_programa')?.touched">
+        <small *ngIf="form.get('id_programa')?.errors?.['required']">El programa es requerido</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="id">ID:</label>
+      <input id="id" type="text" formControlName="id" maxlength="50">
+      <div *ngIf="form.get('id')?.errors && form.get('id')?.touched">
+        <small *ngIf="form.get('id')?.errors?.['required']">El ID es requerido</small>
+        <small *ngIf="form.get('id')?.errors?.['maxlength']">El ID no puede tener más de 50 caracteres</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="p_actuacion">Actuación:</label>
+      <textarea id="p_actuacion" formControlName="p_actuacion" maxlength="600"></textarea>
+      <div *ngIf="form.get('p_actuacion')?.errors && form.get('p_actuacion')?.touched">
+        <small *ngIf="form.get('p_actuacion')?.errors?.['required']">La actuación es requerida</small>
+        <small *ngIf="form.get('p_actuacion')?.errors?.['maxlength']">La actuación no puede tener más de 600 caracteres</small>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="!form.valid">Enviar</button>
+  </form>
