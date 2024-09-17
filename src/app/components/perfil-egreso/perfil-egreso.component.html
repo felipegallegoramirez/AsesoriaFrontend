@@ -1,1 +1,64 @@
-<p>perfil-egreso works!</p>
+<!-- perfil-egreso-form.component.html -->
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="id_programa">ID Programa:</label>
+      <input id="id_programa" type="text" formControlName="id_programa"
+             [title]="'Ingrese el ID del programa'">
+      <div *ngIf="form.get('id_programa')?.errors && form.get('id_programa')?.touched">
+        <small *ngIf="form.get('id_programa')?.errors?.['required']">El ID del programa es requerido</small>
+        <small *ngIf="form.get('id_programa')?.errors?.['maxlength']">El ID del programa no puede exceder 255 caracteres</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="id">ID:</label>
+      <input id="id" type="text" formControlName="id"
+             [title]="'Ingrese el ID'">
+      <div *ngIf="form.get('id')?.errors && form.get('id')?.touched">
+        <small *ngIf="form.get('id')?.errors?.['required']">El ID es requerido</small>
+        <small *ngIf="form.get('id')?.errors?.['maxlength']">El ID no puede exceder 50 caracteres</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="nombre_programa">Nombre del Programa:</label>
+      <input id="nombre_programa" type="text" formControlName="nombre_programa"
+             [title]="'Ingrese el nombre del programa'">
+      <div *ngIf="form.get('nombre_programa')?.errors && form.get('nombre_programa')?.touched">
+        <small *ngIf="form.get('nombre_programa')?.errors?.['required']">El nombre del programa es requerido</small>
+        <small *ngIf="form.get('nombre_programa')?.errors?.['maxlength']">El nombre del programa no puede exceder 100 caracteres</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="nmodalidad">Modalidad:</label>
+      <input id="nmodalidad" type="text" formControlName="nmodalidad"
+             [title]="'Ingrese la modalidad'">
+      <div *ngIf="form.get('nmodalidad')?.errors && form.get('nmodalidad')?.touched">
+        <small *ngIf="form.get('nmodalidad')?.errors?.['required']">La modalidad es requerida</small>
+        <small *ngIf="form.get('nmodalidad')?.errors?.['maxlength']">La modalidad no puede exceder 30 caracteres</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="perfil_profesional">Perfil Profesional:</label>
+      <textarea id="perfil_profesional" formControlName="perfil_profesional"
+                [title]="'Ingrese el perfil profesional'"></textarea>
+      <div *ngIf="form.get('perfil_profesional')?.errors && form.get('perfil_profesional')?.touched">
+        <small *ngIf="form.get('perfil_profesional')?.errors?.['required']">El perfil profesional es requerido</small>
+        <small *ngIf="form.get('perfil_profesional')?.errors?.['maxlength']">El perfil profesional no puede exceder 2500 caracteres</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="perfil_ocupacional">Perfil Ocupacional:</label>
+      <textarea id="perfil_ocupacional" formControlName="perfil_ocupacional"
+                [title]="'Ingrese el perfil ocupacional'"></textarea>
+      <div *ngIf="form.get('perfil_ocupacional')?.errors && form.get('perfil_ocupacional')?.touched">
+        <small *ngIf="form.get('perfil_ocupacional')?.errors?.['required']">El perfil ocupacional es requerido</small>
+        <small *ngIf="form.get('perfil_ocupacional')?.errors?.['maxlength']">El perfil ocupacional no puede exceder 2500 caracteres</small>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="!form.valid">Enviar</button>
+  </form>
