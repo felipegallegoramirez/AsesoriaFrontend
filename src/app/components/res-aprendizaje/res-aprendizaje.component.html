@@ -1,1 +1,86 @@
-<p>res-aprendizaje works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="id_restultado">ID Resultado:</label>
+      <input id="id_restultado" type="text" formControlName="id_restultado" maxlength="50">
+      <div *ngIf="form.get('id_restultado')?.errors && form.get('id_restultado')?.touched">
+        <small *ngIf="form.get('id_restultado')?.errors?.['required']">El ID Resultado es requerido</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="competencia">Competencia:</label>
+      <textarea id="competencia" formControlName="competencia" maxlength="600"></textarea>
+      <div *ngIf="form.get('competencia')?.errors && form.get('competencia')?.touched">
+        <small *ngIf="form.get('competencia')?.errors?.['required']">La competencia es requerida</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="tipo_saber">Tipo de Saber:</label>
+      <input id="tipo_saber" type="text" formControlName="tipo_saber" maxlength="10">
+      <div *ngIf="form.get('tipo_saber')?.errors && form.get('tipo_saber')?.touched">
+        <small *ngIf="form.get('tipo_saber')?.errors?.['required']">El tipo de saber es requerido</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="saber_asociado">Saber Asociado:</label>
+      <input id="saber_asociado" type="text" formControlName="saber_asociado" maxlength="255">
+      <div *ngIf="form.get('saber_asociado')?.errors && form.get('saber_asociado')?.touched">
+        <small *ngIf="form.get('saber_asociado')?.errors?.['required']">El saber asociado es requerido</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="taxonomia">Taxonomía:</label>
+      <input id="taxonomia" type="text" formControlName="taxonomia" maxlength="10">
+      <div *ngIf="form.get('taxonomia')?.errors && form.get('taxonomia')?.touched">
+        <small *ngIf="form.get('taxonomia')?.errors?.['required']">La taxonomía es requerida</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="dominio_tratar">Dominio a Tratar:</label>
+      <input id="dominio_tratar" type="text" formControlName="dominio_tratar" maxlength="20">
+      <div *ngIf="form.get('dominio_tratar')?.errors && form.get('dominio_tratar')?.touched">
+        <small *ngIf="form.get('dominio_tratar')?.errors?.['required']">El dominio a tratar es requerido</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="nivel_dominio">Nivel de Dominio:</label>
+      <input id="nivel_dominio" type="text" formControlName="nivel_dominio" maxlength="20">
+      <div *ngIf="form.get('nivel_dominio')?.errors && form.get('nivel_dominio')?.touched">
+        <small *ngIf="form.get('nivel_dominio')?.errors?.['required']">El nivel de dominio es requerido</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="verbo">Verbo:</label>
+      <input id="verbo" type="text" formControlName="verbo" maxlength="20">
+      <div *ngIf="form.get('verbo')?.errors && form.get('verbo')?.touched">
+        <small *ngIf="form.get('verbo')?.errors?.['required']">El verbo es requerido</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="resultado_ap">Resultado de Aprendizaje:</label>
+      <textarea id="resultado_ap" formControlName="resultado_ap" maxlength="600"></textarea>
+      <div *ngIf="form.get('resultado_ap')?.errors && form.get('resultado_ap')?.touched">
+        <small *ngIf="form.get('resultado_ap')?.errors?.['required']">El resultado de aprendizaje es requerido</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="id_programa">Programa:</label>
+      <select id="id_programa" formControlName="id_programa">
+        <option value="">Seleccione un programa</option>
+        <option *ngFor="let programa of programas" [value]="programa.id">{{programa.nombre}}</option>
+      </select>
+      <div *ngIf="form.get('id_programa')?.errors && form.get('id_programa')?.touched">
+        <small *ngIf="form.get('id_programa')?.errors?.['required']">El programa es requerido</small>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="!form.valid">Enviar</button>
+  </form>
