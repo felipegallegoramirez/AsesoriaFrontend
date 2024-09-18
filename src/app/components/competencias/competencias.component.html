@@ -1,13 +1,14 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div>
-      <label for="id_programa">Programa:</label>
-      <select id="id_programa" formControlName="id_programa">
-        <option *ngFor="let programa of programas" [value]="programa.id">{{programa.nombre}}</option>
-      </select>
-      <div *ngIf="form.get('id_programa')?.errors && form.get('id_programa')?.touched">
-        <small *ngIf="form.get('id_programa')?.errors?.['required']">El programa es requerido</small>
-      </div>
+  <div>
+    <label for="id_programa">ID Programa:</label>
+    <select id="id_programa" formControlName="id_programa">
+      <option value="">Seleccione un programa</option>
+      <option *ngFor="let programa of programas" [value]="programa.id">{{programa.nombre}}</option>
+    </select>
+    <div *ngIf="form.get('id_programa')?.errors && form.get('id_programa')?.touched">
+      <small *ngIf="form.get('id_programa')?.errors?.['required']">El ID del programa es requerido</small>
     </div>
+  </div>
   
     <div>
       <label for="id">ID:</label>

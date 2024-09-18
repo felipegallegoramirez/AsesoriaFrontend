@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrl: './perfil-egreso.component.css'
 })
 export class PerfilEgresoComponent  implements OnInit{
+  programas: any[] = [];
   form: FormGroup;
 
   constructor(private fb: FormBuilder) {

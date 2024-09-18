@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ResAprendizajeComponent {
   form: FormGroup;
   programas: any[] = [];
+  resultados: any[] = [];
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({

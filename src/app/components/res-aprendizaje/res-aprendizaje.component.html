@@ -1,9 +1,23 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div>
       <label for="id_restultado">ID Resultado:</label>
-      <input id="id_restultado" type="text" formControlName="id_restultado" maxlength="50">
+      <select id="id_restultado" formControlName="id_restultado">
+        <option value="">Seleccione un Resultado</option>
+        <option *ngFor="let resultado of resultados" [value]="resultado.id">{{resultado.nombre}}</option>
+      </select>
       <div *ngIf="form.get('id_restultado')?.errors && form.get('id_restultado')?.touched">
         <small *ngIf="form.get('id_restultado')?.errors?.['required']">El ID Resultado es requerido</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="id_programa">ID Programa:</label>
+      <select id="id_programa" formControlName="id_programa">
+        <option value="">Seleccione un programa</option>
+        <option *ngFor="let programa of programas" [value]="programa.id">{{programa.nombre}}</option>
+      </select>
+      <div *ngIf="form.get('id_programa')?.errors && form.get('id_programa')?.touched">
+        <small *ngIf="form.get('id_programa')?.errors?.['required']">El ID del programa es requerido</small>
       </div>
     </div>
   
@@ -71,16 +85,7 @@
       </div>
     </div>
   
-    <div>
-      <label for="id_programa">Programa:</label>
-      <select id="id_programa" formControlName="id_programa">
-        <option value="">Seleccione un programa</option>
-        <option *ngFor="let programa of programas" [value]="programa.id">{{programa.nombre}}</option>
-      </select>
-      <div *ngIf="form.get('id_programa')?.errors && form.get('id_programa')?.touched">
-        <small *ngIf="form.get('id_programa')?.errors?.['required']">El programa es requerido</small>
-      </div>
-    </div>
+
   
     <button type="submit" [disabled]="!form.valid">Enviar</button>
   </form>
