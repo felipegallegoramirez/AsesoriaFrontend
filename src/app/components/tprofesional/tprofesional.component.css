@@ -1,38 +1,100 @@
 form {
-    display: flex;
-    flex-direction: column;
-    max-width: 300px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+form * {
+  width: 100%;
+}
+textarea{
+  resize: vertical;
+  height: 100px;
+  min-height: 50px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: none;
+  outline:1.5px solid gray;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+textarea:focus {
+  outline:1.5px solid #0F385A;
   }
-  
-  div {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 5px;
-  }
-  
-  small {
-    color: red;
-  }
-  
-  button {
-    padding: 10px;
-    background-color: #0F385A;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-  }
+
+form>div {
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: none;
+  outline:1.5px solid gray;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+  outline:1.5px solid #0F385A;
+}
+
+small {
+  color: red;
+}
+
+button {
+  padding: 10px;
+  background-color: #0F385A;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  margin: auto;
+  width: 25%;
+  font-size: 18px;
+}
+
+
+select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1.5px solid gray;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  outline: none;
+  appearance: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 200px;
+}
+
+select:focus {
+  border-color: #0F385A;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"><path d="M4 6l4 4 4-4"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}

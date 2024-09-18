@@ -17,6 +17,7 @@ import { EstMesocurricularComponent } from './components/est-mesocurricular/est-
 import { IndImpactoComponent } from './components/ind-impacto/ind-impacto.component';
 import { AcRetroalComponent } from './components/ac-retroal/ac-retroal.component';
 import { InstMedicionComponent } from './components/inst-medicion/inst-medicion.component';
+import { FormCentralComponent } from './pages/form-central/form-central.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'IndImpactoComponent', component: IndImpactoComponent },
   { path: 'AcRetroalComponent', component: AcRetroalComponent },
   { path: 'InstMedicionComponent', component: InstMedicionComponent },
+  { path: 'formulario', component: FormComponent },
 
 ];
 

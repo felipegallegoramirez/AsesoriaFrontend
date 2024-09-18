@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EstMesocurricularComponent implements OnInit {
   form: FormGroup;
-  estrategias: string[] = ['Estrategia 1', 'Estrategia 2', 'Estrategia 3'];
+  estrategias: string[] = [];
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
