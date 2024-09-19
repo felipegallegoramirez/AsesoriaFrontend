@@ -1,6 +1,9 @@
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div>
+    <label class="title" for="">Profesional</label>
+  </div>
+  <div>
     <label for="id_programa">ID Programa:</label>
     <select id="id_programa" formControlName="id_programa">
       <option value="">Seleccione un programa</option>
@@ -22,7 +25,7 @@
   </div>
 
   <div>
-    <label for="saber">Saber:</label>
+    <label class="subtitle" for="saber">Saber:</label>
     <textarea id="saber" formControlName="saber"
               [title]="'Ingrese el saber'"></textarea>
     <div *ngIf="form.get('saber')?.errors && form.get('saber')?.touched">
@@ -32,7 +35,7 @@
   </div>
 
   <div>
-    <label for="saber_hacer">Saber Hacer:</label>
+    <label class="subtitle" for="saber_hacer">Saber Hacer:</label>
     <textarea id="saber_hacer" formControlName="saber_hacer"
               [title]="'Ingrese el saber hacer'"></textarea>
     <div *ngIf="form.get('saber_hacer')?.errors && form.get('saber_hacer')?.touched">
@@ -42,7 +45,7 @@
   </div>
 
   <div>
-    <label for="saber_ser">Saber Ser:</label>
+    <label class="subtitle" for="saber_ser">Saber Ser:</label>
     <textarea id="saber_ser" formControlName="saber_ser"
               [title]="'Ingrese el saber ser'"></textarea>
     <div *ngIf="form.get('saber_ser')?.errors && form.get('saber_ser')?.touched">

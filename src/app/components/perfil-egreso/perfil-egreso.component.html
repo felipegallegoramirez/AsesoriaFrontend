@@ -42,7 +42,7 @@
     </div>
   
     <div>
-      <label for="perfil_profesional">Perfil Profesional:</label>
+      <label class="title" for="perfil_profesional">Perfil Profesional:</label>
       <textarea id="perfil_profesional" formControlName="perfil_profesional"
                 [title]="'Ingrese el perfil profesional'"></textarea>
       <div *ngIf="form.get('perfil_profesional')?.errors && form.get('perfil_profesional')?.touched">
@@ -52,7 +52,7 @@
     </div>
   
     <div>
-      <label for="perfil_ocupacional">Perfil Ocupacional:</label>
+      <label class="title" for="perfil_ocupacional">Perfil Ocupacional:</label>
       <textarea id="perfil_ocupacional" formControlName="perfil_ocupacional"
                 [title]="'Ingrese el perfil ocupacional'"></textarea>
       <div *ngIf="form.get('perfil_ocupacional')?.errors && form.get('perfil_ocupacional')?.touched">
