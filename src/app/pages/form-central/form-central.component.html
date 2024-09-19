@@ -1,1 +1,31 @@
-<p>form-central works!</p>
+<div class="container">
+    <div
+      *ngIf="currentDiv === 'div1'"
+      class="slide"
+      [ngClass]="{'slide-out-left': isSlidingOut, 'slide-in-right': isSlidingIn}"
+    >
+    <div class="button">
+      <button (click)="change(1)">Perfil Profesional - Ocupacional</button>
+      <button (click)="change(2)">Profesional</button>
+      <button (click)="change(3)">Componentes fundamentales de la ocupación laboral del profesional</button>
+      <button (click)="change(4)">Diferencial (valor agregado) del profesional</button>
+      <button (click)="toggleDiv()">Ir al Div 2</button>
+    </div>
+    </div>
+  
+    <div
+      *ngIf="currentDiv === 'div2'"
+      class="slide"
+      [ngClass]="{'slide-out-right': isSlidingOut, 'slide-in-left': isSlidingIn}"
+    >
+
+    <div class="button">
+      <app-perfil-egreso *ngIf="act == 1"/>
+      <app-saber *ngIf="act == 2"/>
+      <app-atprofesionales *ngIf="act == 3"/>
+      <app-vagregado *ngIf="act == 4"/>
+      <button (click)="toggleDiv()">Regresar</button>
+    </div>
+    </div>
+  </div>
+  

@@ -20,8 +20,8 @@
     </div>
   
     <div>
-      <label for="v_agregado">Valor Agregado:</label>
-      <input id="v_agregado" type="text" formControlName="v_agregado" maxlength="500">
+      <label for="v_agregado" class="title">Valor Agregado:</label>
+      <textarea id="v_agregado" type="text" formControlName="v_agregado" maxlength="500"></textarea>
       <div *ngIf="form.get('v_agregado')?.errors && form.get('v_agregado')?.touched">
         <small *ngIf="form.get('v_agregado')?.errors?.['required']">El valor agregado es requerido</small>
         <small *ngIf="form.get('v_agregado')?.errors?.['maxlength']">El valor agregado no puede tener más de 500 caracteres</small>

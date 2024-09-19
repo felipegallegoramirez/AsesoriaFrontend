@@ -35,7 +35,7 @@ const routes: Routes = [
   { path: 'IndImpactoComponent', component: IndImpactoComponent },
   { path: 'AcRetroalComponent', component: AcRetroalComponent },
   { path: 'InstMedicionComponent', component: InstMedicionComponent },
-  { path: 'formulario', component: FormComponent },
+  { path: 'formulario', component: FormCentralComponent },
 
 ];
 
