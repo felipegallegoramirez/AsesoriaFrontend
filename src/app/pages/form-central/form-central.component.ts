@@ -9,6 +9,8 @@ export class FormCentralComponent {
   currentDiv: string = 'div1';
   isSlidingOut: boolean = false;
   isSlidingIn: boolean = false;
+  isReturnIn: boolean = false;
+  isReturnOut: boolean = false;
   act:number=0;
 
   change(form:number){
@@ -29,16 +31,37 @@ export class FormCentralComponent {
       }, 100); // Tiempo de la animación de entrada
     }, 400); // Tiempo de la animación de salida
   }
+  standar(){
+    this.isSlidingOut = false;
+    this.isSlidingIn = false;
+    this.isReturnIn = false;
+    this.isReturnOut = false;
+  }
 
   morediv(n:number) {
+    this.standar()
     this.isSlidingOut = true;
     setTimeout(() => {
-      this.currentDiv = this.currentDiv === 'div1' ? 'div2' : 'div1';
+      this.currentDiv = 'div'+n;
       this.isSlidingOut = false;
       this.isSlidingIn = true;
 
       setTimeout(() => {
         this.isSlidingIn = false;
+      }, 100); // Tiempo de la animación de entrada
+    }, 400); // Tiempo de la animación de salida
+  }
+
+  return(n:number) {
+    this.standar()
+    this.isReturnOut = true;
+    setTimeout(() => {
+      this.currentDiv = 'div'+n;
+      this.isReturnOut = false;
+      this.isReturnIn = true;
+
+      setTimeout(() => {
+        this.isReturnIn = false;
       }, 100); // Tiempo de la animación de entrada
     }, 400); // Tiempo de la animación de salida
   }

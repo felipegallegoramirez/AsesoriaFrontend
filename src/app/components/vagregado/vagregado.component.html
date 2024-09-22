@@ -4,16 +4,17 @@
     <label class="title" for="">Diferencial</label>
   </div>
 
-  <div>
+  <!-- <div>
     <label for="id_programa">ID Programa:</label>
     <input id="id_programa" formControlName="id_programa">
     <div *ngIf="form.get('id_programa')?.errors && form.get('id_programa')?.touched">
       <small *ngIf="form.get('id_programa')?.errors?.['required']">El ID del programa es requerido</small>
     </div>
-  </div>
+  </div> -->
   
     <div>
       <label for="v_agregado" class="subtitle">Valor Agregado:</label>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
       <textarea id="v_agregado" type="text" formControlName="v_agregado" maxlength="500"></textarea>
       <div *ngIf="form.get('v_agregado')?.errors && form.get('v_agregado')?.touched">
         <small *ngIf="form.get('v_agregado')?.errors?.['required']">El valor agregado es requerido</small>

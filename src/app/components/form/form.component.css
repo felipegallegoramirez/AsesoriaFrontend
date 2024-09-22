@@ -3,6 +3,9 @@ form {
   flex-direction: column;
   max-width: 800px;
   margin: 0 auto;
+  height: 80vh;
+  padding: 10px;
+  overflow-y: scroll;
 }
 
 form * {
@@ -115,4 +118,9 @@ select {
   background-color: #1FB2DE;
   box-sizing: border-box;
   color: black;
+}
+
+p{
+  opacity: 0.8;
+  margin: 0px 0px 10px 0px;
 }

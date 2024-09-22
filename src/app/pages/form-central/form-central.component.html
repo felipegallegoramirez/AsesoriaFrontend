@@ -1,30 +1,85 @@
 <div class="container">
-    <div
-      *ngIf="currentDiv === 'div1'"
-      class="slide"
-      [ngClass]="{'slide-out-left': isSlidingOut, 'slide-in-right': isSlidingIn}"
-    >
+  <div
+    *ngIf="currentDiv === 'div1'"
+    class="slide"
+    [ngClass]="{
+      'slide-out-left': isSlidingOut,
+      'slide-in-left': isSlidingIn,
+      'slide-out-right': isReturnOut,
+      'slide-in-right': isReturnIn,
+    }"
+  >
     <div class="button">
-      <button (click)="change(1)">Perfil Profesional - Ocupacional</button>
-      <button (click)="change(2)">Profesional</button>
-      <button (click)="change(3)">Componentes fundamentales de la ocupación laboral del profesional</button>
-      <button (click)="change(4)">Diferencial (valor agregado) del profesional</button>
-    </div>
-    </div>
-  
-    <div
-      *ngIf="currentDiv === 'div2'"
-      class="slide"
-      [ngClass]="{'slide-out-right': isSlidingOut, 'slide-in-left': isSlidingIn}"
-    >
-
-    <div class="button">
-      <app-perfil-egreso *ngIf="act == 1"/>
-      <app-saber *ngIf="act == 2"/>
-      <app-atprofesionales *ngIf="act == 3"/>
-      <app-vagregado *ngIf="act == 4"/>
-      <button (click)="toggleDiv()">Regresar</button>
-    </div>
+      <app-perfil-egreso />
+      <button (click)="morediv(2)">Siguiente</button>
     </div>
   </div>
-  
+
+
+  <div
+  *ngIf="currentDiv === 'div2'"
+  class="slide"
+  [ngClass]="{
+  'slide-out-left': isSlidingOut,
+  'slide-in-left': isSlidingIn,
+  'slide-out-right': isReturnOut,
+  'slide-in-right': isReturnIn,
+}"
+>
+  <div class="button">
+    <button (click)="morediv(3)">Agregar Saber</button>
+    <button (click)="return(1)">Regresar</button>
+  </div>
+</div>
+
+  <div
+    *ngIf="currentDiv === 'div3'"
+    class="slide"
+    [ngClass]="{
+    'slide-out-left': isSlidingOut,
+    'slide-in-left': isSlidingIn,
+    'slide-out-right': isReturnOut,
+    'slide-in-right': isReturnIn,
+  }"
+  >
+    <div class="button">
+      <app-saber />
+      <button (click)="morediv(4)">Siguiente</button>
+      <button (click)="return(2)">Regresar</button>
+    </div>
+  </div>
+
+  <div
+    *ngIf="currentDiv === 'div4'"
+    class="slide"
+    [ngClass]="{
+  'slide-out-left': isSlidingOut,
+  'slide-in-left': isSlidingIn,
+  'slide-out-right': isReturnOut,
+  'slide-in-right': isReturnIn,
+}"
+  >
+    <div class="button">
+      <app-atprofesionales />
+      <button (click)="morediv(5)">Siguiente</button>
+      <button (click)="return(3)">Regresar</button>
+    </div>
+  </div>
+
+  <div
+    *ngIf="currentDiv === 'div5'"
+    class="slide"
+    [ngClass]="{
+'slide-out-left': isSlidingOut,
+'slide-in-left': isSlidingIn,
+'slide-out-right': isReturnOut,
+'slide-in-right': isReturnIn,
+}"
+  >
+    <div class="button">
+      <app-vagregado />
+      <button (click)="morediv(2)">Finalizar</button>
+      <button (click)="return(4)">Regresar</button>
+    </div>
+  </div>
+</div>

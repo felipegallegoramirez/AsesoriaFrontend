@@ -3,6 +3,9 @@ form {
   flex-direction: column;
   max-width: 800px;
   margin: 0 auto;
+  height: 80vh;
+  padding: 10px;
+  overflow-y: scroll;
 }
 
 form * {
@@ -97,4 +100,27 @@ select {
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 12px;
+}
+
+.title{
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  background-color: #0F385A;
+  box-sizing: border-box;
+  color: white;
+}
+
+.subtitle{
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  background-color: #1FB2DE;
+  box-sizing: border-box;
+  color: black;
+}
+
+p{
+  opacity: 0.8;
+  margin: 0px 0px 10px 0px;
 }
