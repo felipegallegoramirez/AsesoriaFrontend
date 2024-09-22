@@ -13,7 +13,7 @@ export class ATProfesionalesComponent {
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       id_programa: ['', [Validators.required]],
-      id: ['', [Validators.required, Validators.maxLength(50)]],
+      //id: ['', [Validators.required, Validators.maxLength(50)]],
       areas_profesionales: ['', [Validators.required, Validators.maxLength(255)]],
       tareas_profesionales: ['', [Validators.required, Validators.maxLength(255)]],
       poblaciones_actuacion: ['', [Validators.required, Validators.maxLength(255)]]

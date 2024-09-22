@@ -13,7 +13,7 @@ export class TProfesionalComponent implements OnInit {
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       id_programa: ['', Validators.required],
-      id: ['', [Validators.required, Validators.maxLength(50)]],
+      //id: ['', [Validators.required, Validators.maxLength(50)]],
       t_profesional: ['', [Validators.required, Validators.maxLength(300)]]
     });
   }

@@ -13,7 +13,7 @@ export class PerfilEgresoComponent  implements OnInit{
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       id_programa: ['', [Validators.required, Validators.maxLength(255)]],
-      id: ['', [Validators.required, Validators.maxLength(50)]],
+      //id: ['', [Validators.required, Validators.maxLength(50)]],
       nombre_programa: ['', [Validators.required, Validators.maxLength(100)]],
       nmodalidad: ['', [Validators.required, Validators.maxLength(30)]],
       perfil_profesional: ['', [Validators.required, Validators.maxLength(2500)]],

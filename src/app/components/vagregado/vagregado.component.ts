@@ -13,7 +13,7 @@ export class VAgregadoComponent implements OnInit{
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       id_programa: ['', Validators.required],
-      id: ['', [Validators.required, Validators.maxLength(50)]],
+      //id: ['', [Validators.required, Validators.maxLength(50)]],
       v_agregado: ['', [Validators.required, Validators.maxLength(500)]]
     });
   }

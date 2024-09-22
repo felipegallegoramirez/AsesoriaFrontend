@@ -1,23 +1,11 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div>
     <label for="id_programa">ID Programa:</label>
-    <select id="id_programa" formControlName="id_programa">
-      <option value="">Seleccione un programa</option>
-      <option *ngFor="let programa of programas" [value]="programa.id">{{programa.nombre}}</option>
-    </select>
+    <input id="id_programa" formControlName="id_programa">
     <div *ngIf="form.get('id_programa')?.errors && form.get('id_programa')?.touched">
       <small *ngIf="form.get('id_programa')?.errors?.['required']">El ID del programa es requerido</small>
     </div>
   </div>
-  
-    <div>
-      <label for="id">ID:</label>
-      <input id="id" type="text" formControlName="id" maxlength="50">
-      <div *ngIf="form.get('id')?.errors && form.get('id')?.touched">
-        <small *ngIf="form.get('id')?.errors?.['required']">El ID es requerido</small>
-        <small *ngIf="form.get('id')?.errors?.['maxlength']">El ID no debe exceder 50 caracteres</small>
-      </div>
-    </div>
   
     <div>
       <label for="verbo">Verbo:</label>

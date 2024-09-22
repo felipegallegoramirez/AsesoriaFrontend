@@ -29,4 +29,17 @@ export class FormCentralComponent {
       }, 100); // Tiempo de la animación de entrada
     }, 400); // Tiempo de la animación de salida
   }
+
+  morediv(n:number) {
+    this.isSlidingOut = true;
+    setTimeout(() => {
+      this.currentDiv = this.currentDiv === 'div1' ? 'div2' : 'div1';
+      this.isSlidingOut = false;
+      this.isSlidingIn = true;
+
+      setTimeout(() => {
+        this.isSlidingIn = false;
+      }, 100); // Tiempo de la animación de entrada
+    }, 400); // Tiempo de la animación de salida
+  }
 }
