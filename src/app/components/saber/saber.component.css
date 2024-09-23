@@ -60,10 +60,13 @@ small {
 
 
 button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-  margin: auto;
-  font-size: 18px;
+  background-color: #cccccc !important;
+  cursor: not-allowed !important;
+  margin: auto !important;
+  font-size: 18px!important ;
+  outline: 0px solid #0F385A !important ;
+  font-weight: 500 !important ;
+  color: white !important;
 }
 
 button{
