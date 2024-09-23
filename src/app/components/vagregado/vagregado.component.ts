@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -12,7 +12,7 @@ export class VAgregadoComponent implements OnInit{
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      id_programa: ['', Validators.required],
+      //id_programa: ['', Validators.required],
       //id: ['', [Validators.required, Validators.maxLength(50)]],
       v_agregado: ['', [Validators.required, Validators.maxLength(500)]]
     });
@@ -21,9 +21,12 @@ export class VAgregadoComponent implements OnInit{
   ngOnInit() {
   }
 
+  @Output() esFormularioValido = new EventEmitter<boolean>();
+
   onSubmit() {
     if (this.form.valid) {
       console.log(this.form.value);
+      this.esFormularioValido.emit(this.form.valid);
     } else {
       console.log('Formulario inválido');
     }

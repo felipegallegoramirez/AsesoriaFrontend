@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -12,7 +12,7 @@ export class PerfilEgresoComponent  implements OnInit{
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      id_programa: ['', [Validators.required, Validators.maxLength(255)]],
+      //id_programa: ['', [Validators.required, Validators.maxLength(255)]],
       //id: ['', [Validators.required, Validators.maxLength(50)]],
       nombre_programa: ['', [Validators.required, Validators.maxLength(100)]],
       nmodalidad: ['', [Validators.required, Validators.maxLength(30)]],
@@ -23,8 +23,11 @@ export class PerfilEgresoComponent  implements OnInit{
 
   ngOnInit(): void {}
 
+  @Output() esFormularioValido = new EventEmitter<boolean>();
+
   onSubmit() {
     if (this.form.valid) {
+      this.esFormularioValido.emit(this.form.valid);
       console.log(this.form.value);
     } else {
       console.log('Formulario inválido');

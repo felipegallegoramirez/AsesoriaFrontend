@@ -10,8 +10,8 @@
     }"
   >
     <div class="button">
-      <app-perfil-egreso />
-      <button (click)="morediv(2)">Siguiente</button>
+      <app-perfil-egreso (esFormularioValido)="form1($event)" />
+      <!-- <button (click)="morediv(2)">Siguiente</button> -->
     </div>
   </div>
 
@@ -29,6 +29,7 @@
   <div class="button">
     <button (click)="morediv(3)">Agregar Saber</button>
     <button (click)="return(1)">Regresar</button>
+    <button >Finalizar</button>
   </div>
 </div>
 
@@ -43,8 +44,8 @@
   }"
   >
     <div class="button">
-      <app-saber />
-      <button (click)="morediv(4)">Siguiente</button>
+      <app-saber (esFormularioValido)="form2($event)"/>
+      <!-- <button (click)="morediv(4)">Siguiente</button> -->
       <button (click)="return(2)">Regresar</button>
     </div>
   </div>
@@ -60,8 +61,8 @@
 }"
   >
     <div class="button">
-      <app-atprofesionales />
-      <button (click)="morediv(5)">Siguiente</button>
+      <app-atprofesionales (esFormularioValido)="form3($event)"/>
+      <!-- <button (click)="morediv(5)">Siguiente</button> -->
       <button (click)="return(3)">Regresar</button>
     </div>
   </div>
@@ -77,8 +78,8 @@
 }"
   >
     <div class="button">
-      <app-vagregado />
-      <button (click)="morediv(2)">Finalizar</button>
+      <app-vagregado (esFormularioValido)="form4($event)" />
+      <!-- <button (click)="morediv(2)">Continuar</button> -->
       <button (click)="return(4)">Regresar</button>
     </div>
   </div>

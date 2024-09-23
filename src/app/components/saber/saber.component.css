@@ -1,7 +1,8 @@
 form {
   display: flex;
   flex-direction: column;
-  max-width: 800px;
+  width: calc(100% - 20px);
+  box-sizing: border-box;
   margin: 0 auto;
   height: 80vh;
   padding: 10px;
@@ -56,20 +57,31 @@ small {
   color: red;
 }
 
-button {
-  padding: 10px;
-  background-color: #0F385A;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
+
 
 button:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
   margin: auto;
-  width: 25%;
   font-size: 18px;
+}
+
+button{
+  width: 100%;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #0F385A;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover{
+  background-color:white ;
+  color: #0F385A;
+  outline: 3px solid #0F385A;
+  font-weight: bold;
 }
 
 

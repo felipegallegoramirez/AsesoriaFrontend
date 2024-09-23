@@ -65,4 +65,30 @@ export class FormCentralComponent {
       }, 100); // Tiempo de la animación de entrada
     }, 400); // Tiempo de la animación de salida
   }
+
+  form1(esValido: boolean) {
+    if(esValido){
+      this.morediv(2)
+    }
+  }
+
+  form2(esValido: boolean) {
+    if(esValido){
+      this.morediv(4)
+    }
+  }
+
+  form3(esValido: boolean) {
+    if(esValido){
+      this.morediv(5)
+    }
+  }
+
+  form4(esValido: boolean) {
+    if(esValido){
+      this.morediv(2)
+    }
+  }
+
+
 }
