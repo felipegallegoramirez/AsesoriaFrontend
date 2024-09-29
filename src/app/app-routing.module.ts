@@ -21,6 +21,7 @@ import { FormCentralComponent } from './pages/form-central/form-central.componen
 
 
 const routes: Routes = [
+  { path: '', component: FormCentralComponent },
   { path: 'form', component: FormComponent },
   { path: 'PerfilEgreso', component: PerfilEgresoComponent },
   { path: 'SaberComponent', component: SaberComponent },

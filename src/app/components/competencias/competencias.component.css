@@ -138,3 +138,27 @@ p{
   opacity: 0.8;
   margin: 0px 0px 10px 0px;
 }
+
+
+.suggestions-list {
+  position: absolute;
+  left: 20;
+  width: 70px;
+  z-index: 2000;
+
+  background-color: white;
+  border: 1px solid #ddd;
+  list-style-type: none;
+  padding: 0;
+  margin: 0px;
+  max-height: 200px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.suggestions-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+.suggestions-list li:hover {
+  background-color: #f0f0f0;
+}

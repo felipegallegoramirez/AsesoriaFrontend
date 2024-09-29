@@ -86,6 +86,12 @@ export class FormCentralComponent {
 
   form4(esValido: boolean) {
     if(esValido){
+      this.morediv(6)
+    }
+  }
+
+  form5(esValido: boolean) {
+    if(esValido){
       this.morediv(2)
     }
   }

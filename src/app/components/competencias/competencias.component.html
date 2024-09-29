@@ -1,24 +1,26 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="id_programa">ID Programa:</label>
-    <input id="id_programa" formControlName="id_programa">
-    <div *ngIf="form.get('id_programa')?.errors && form.get('id_programa')?.touched">
-      <small *ngIf="form.get('id_programa')?.errors?.['required']">El ID del programa es requerido</small>
-    </div>
-  </div>
   
     <div>
-      <label for="verbo">Verbo:</label>
-      <input id="verbo" type="text" formControlName="verbo" maxlength="25">
+      <label class="subtitle" for="verbo">Verbo:</label>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
+      <input id="verbo" type="text" formControlName="verbo" maxlength="25" (focus)="onFocus()" (blur)="onBlur()" (keydown)="filterSuggestions()">
       <div *ngIf="form.get('verbo')?.errors && form.get('verbo')?.touched">
         <small *ngIf="form.get('verbo')?.errors?.['required']">El verbo es requerido</small>
         <small *ngIf="form.get('verbo')?.errors?.['maxlength']">El verbo no debe exceder 25 caracteres</small>
+        <small *ngIf="form.get('verbo')?.errors?.['contain']">Verbo no encontrado</small>
       </div>
+      <ul *ngIf="showSuggestions" class="suggestions-list">        
+        <li  *ngFor="let suggestion of filteredSuggestions" (click)="selectSuggestion(suggestion)">
+        {{ suggestion }}
+        </li>
+      </ul>
+
     </div>
   
     <div>
-      <label for="objeto_conceptual">Objeto Conceptual:</label>
-      <input id="objeto_conceptual" type="text" formControlName="objeto_conceptual" maxlength="255">
+      <label class="subtitle" for="objeto_conceptual">Objeto Conceptual:</label>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
+      <textarea id="objeto_conceptual" type="text" formControlName="objeto_conceptual" maxlength="255"> </textarea>
       <div *ngIf="form.get('objeto_conceptual')?.errors && form.get('objeto_conceptual')?.touched">
         <small *ngIf="form.get('objeto_conceptual')?.errors?.['required']">El objeto conceptual es requerido</small>
         <small *ngIf="form.get('objeto_conceptual')?.errors?.['maxlength']">El objeto conceptual no debe exceder 255 caracteres</small>
@@ -26,8 +28,9 @@
     </div>
   
     <div>
-      <label for="finalidad">Finalidad:</label>
-      <input id="finalidad" type="text" formControlName="finalidad" maxlength="255">
+      <label class="subtitle" for="finalidad">Finalidad:</label>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
+      <textarea id="finalidad" type="text" formControlName="finalidad" maxlength="255"> </textarea>
       <div *ngIf="form.get('finalidad')?.errors && form.get('finalidad')?.touched">
         <small *ngIf="form.get('finalidad')?.errors?.['required']">La finalidad es requerida</small>
         <small *ngIf="form.get('finalidad')?.errors?.['maxlength']">La finalidad no debe exceder 255 caracteres</small>
@@ -35,8 +38,9 @@
     </div>
   
     <div>
-      <label for="condicion_contexto">Condición de Contexto:</label>
-      <input id="condicion_contexto" type="text" formControlName="condicion_contexto" maxlength="255">
+      <label class="subtitle" for="condicion_contexto">Condición de Contexto:</label>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
+      <textarea id="condicion_contexto" type="text" formControlName="condicion_contexto" maxlength="255"></textarea>
       <div *ngIf="form.get('condicion_contexto')?.errors && form.get('condicion_contexto')?.touched">
         <small *ngIf="form.get('condicion_contexto')?.errors?.['required']">La condición de contexto es requerida</small>
         <small *ngIf="form.get('condicion_contexto')?.errors?.['maxlength']">La condición de contexto no debe exceder 255 caracteres</small>
@@ -44,11 +48,13 @@
     </div>
   
     <div>
-      <label for="competencia">Competencia:</label>
+      <label class="title" for="competencia">Competencia:</label>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
       <textarea id="competencia" formControlName="competencia" maxlength="600"></textarea>
       <div *ngIf="form.get('competencia')?.errors && form.get('competencia')?.touched">
         <small *ngIf="form.get('competencia')?.errors?.['required']">La competencia es requerida</small>
         <small *ngIf="form.get('competencia')?.errors?.['maxlength']">La competencia no debe exceder 600 caracteres</small>
+        <small *ngIf="form.get('competencia')?.errors?.['contain']">Recuerde utilizar todos los elementos</small>
       </div>
     </div>
   

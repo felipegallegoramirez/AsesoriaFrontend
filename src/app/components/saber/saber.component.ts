@@ -24,6 +24,9 @@ export class SaberComponent {
 
   onSubmit() {
     if (this.form.valid) {
+      localStorage.setItem('saber',this.form.value.saber)
+      localStorage.setItem('saber_hacer',this.form.value.saber_hacer)
+      localStorage.setItem('saber_ser',this.form.value.saber_ser)
       console.log(this.form.value);
       this.esFormularioValido.emit(this.form.valid);
     } else {
