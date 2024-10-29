@@ -2,6 +2,12 @@
 
   <div>
     <label class="title" for="">Componentes fundamentales</label>
+    <p>
+      Componentes fundamentales de la ocupación laboral del profesional
+    </p>
+    <p>
+      Listar, según lo escrito en los perfiles, en qué áreas, qué tareas potenciales y en qué poblaciones o contextos podrá laborar el profesional.
+    </p>
   </div>
 
   <!-- <div>
@@ -15,7 +21,6 @@
   
     <div>
       <label class="subtitle" for="areas_profesionales">Áreas Profesionales:</label>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
       <textarea id="areas_profesionales" type="text" formControlName="areas_profesionales" maxlength="255"> </textarea>
       <div *ngIf="form.get('areas_profesionales')?.errors && form.get('areas_profesionales')?.touched">
         <small *ngIf="form.get('areas_profesionales')?.errors?.['required']">Las áreas profesionales son requeridas</small>
@@ -25,7 +30,6 @@
   
     <div>
       <label class="subtitle" for="tareas_profesionales">Tareas Profesionales:</label>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
       <textarea id="tareas_profesionales" type="text" formControlName="tareas_profesionales" maxlength="255"> </textarea>
       <div *ngIf="form.get('tareas_profesionales')?.errors && form.get('tareas_profesionales')?.touched">
         <small *ngIf="form.get('tareas_profesionales')?.errors?.['required']">Las tareas profesionales son requeridas</small>
@@ -35,7 +39,6 @@
   
     <div>
       <label class="subtitle" for="poblaciones_actuacion">Poblaciones de Actuación:</label>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
       <textarea id="poblaciones_actuacion" type="text" formControlName="poblaciones_actuacion" maxlength="255"></textarea>
       <div *ngIf="form.get('poblaciones_actuacion')?.errors && form.get('poblaciones_actuacion')?.touched">
         <small *ngIf="form.get('poblaciones_actuacion')?.errors?.['required']">Las poblaciones de actuación son requeridas</small>

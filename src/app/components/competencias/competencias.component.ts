@@ -21,7 +21,7 @@ export class CompetenciasComponent implements OnInit {
       verbo: ['', [Validators.required, Validators.maxLength(25), this.containVerb()]],
       objeto_conceptual: [{value:'',disabled:true}, [Validators.required, Validators.maxLength(255)]],
       finalidad: [{value:'',disabled:true}, [Validators.required, Validators.maxLength(255)]],
-      condicion_contexto: ['', [Validators.required, Validators.maxLength(255)]],
+      condicion_contexto: [{value:'',disabled:true}, [Validators.required, Validators.maxLength(255)]],
       competencia: ['', [Validators.required, Validators.maxLength(600),this.containInfo()]]
     });
   }
@@ -122,6 +122,8 @@ export class CompetenciasComponent implements OnInit {
         localStorage.setItem('saber',this.form.value.saber)
         localStorage.setItem('saber_hacer',this.form.value.saber_hacer)
         localStorage.setItem('saber_ser',this.form.value.saber_ser)
+        localStorage.setItem('competencia',this.form.value.competencia)
+        localStorage.setItem('saber_asociado',this.form.value.objeto_conceptual)
         console.log(this.form.value);
         this.esFormularioValido.emit(this.form.valid);
       } else {

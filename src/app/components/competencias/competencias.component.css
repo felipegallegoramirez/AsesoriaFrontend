@@ -141,7 +141,7 @@ p{
 
 
 .suggestions-list {
-  position: absolute;
+  position: relative;
   left: 20;
   width: 70px;
   z-index: 2000;

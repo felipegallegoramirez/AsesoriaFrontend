@@ -20,7 +20,6 @@
   -->
     <div>
       <label for="nombre_programa">Nombre del Programa:</label>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
       <input id="nombre_programa" type="text" formControlName="nombre_programa"
              [title]="'Ingrese el nombre del programa'">
       <div *ngIf="form.get('nombre_programa')?.errors && form.get('nombre_programa')?.touched">
@@ -31,7 +30,6 @@
   
     <div>
       <label for="nmodalidad">Modalidad:</label>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
       <input id="nmodalidad" type="text" formControlName="nmodalidad"
              [title]="'Ingrese la modalidad'">
       <div *ngIf="form.get('nmodalidad')?.errors && form.get('nmodalidad')?.touched">
@@ -42,7 +40,7 @@
   
     <div>
       <label class="title" for="perfil_profesional">Perfil Profesional:</label>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
+      <p>Escribir el perfil profesional del egresado; este debe decir claramente qué se sabe, qué se sabe hacer con el saber y cómo debe saber ser en la sociedad, según el campo de acción del programa.</p>
       <textarea id="perfil_profesional" formControlName="perfil_profesional"
                 [title]="'Ingrese el perfil profesional'"></textarea>
       <div *ngIf="form.get('perfil_profesional')?.errors && form.get('perfil_profesional')?.touched">
@@ -53,7 +51,7 @@
   
     <div>
       <label class="title" for="perfil_ocupacional">Perfil Ocupacional:</label>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
+      <p>Escribir el perfil ocupacional del egresado; este debe detallar y ampliar lo que se sabe hacer dicho egresado con el saber, según el campo de acción del programa.</p>
       <textarea id="perfil_ocupacional" formControlName="perfil_ocupacional"
                 [title]="'Ingrese el perfil ocupacional'"></textarea>
       <div *ngIf="form.get('perfil_ocupacional')?.errors && form.get('perfil_ocupacional')?.touched">

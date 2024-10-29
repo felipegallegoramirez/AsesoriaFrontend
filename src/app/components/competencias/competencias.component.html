@@ -2,7 +2,7 @@
   
     <div>
       <label class="subtitle" for="verbo">Verbo:</label>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
+      <p>Para la elección de los verbos es muy importante tener articulados el perfil profesional y ocupacional porque con ellos se identifican las acciones que debe realizar el egresado en el ámbito profesional. De acuerdo con el nivel de formación (técnico, tecnólogo, profesional, especialización o maestría) las acciones son distintas, un tecnólogo podría, por ejemplo, implementar, mientras un profesional quizá esté a un nivel de diseñar.</p>
       <input id="verbo" type="text" formControlName="verbo" maxlength="25" (focus)="onFocus()" (blur)="onBlur()" (keydown)="filterSuggestions()">
       <div *ngIf="form.get('verbo')?.errors && form.get('verbo')?.touched">
         <small *ngIf="form.get('verbo')?.errors?.['required']">El verbo es requerido</small>
@@ -19,7 +19,6 @@
   
     <div>
       <label class="subtitle" for="objeto_conceptual">Objeto Conceptual:</label>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
       <textarea id="objeto_conceptual" type="text" formControlName="objeto_conceptual" maxlength="255"> </textarea>
       <div *ngIf="form.get('objeto_conceptual')?.errors && form.get('objeto_conceptual')?.touched">
         <small *ngIf="form.get('objeto_conceptual')?.errors?.['required']">El objeto conceptual es requerido</small>
@@ -29,7 +28,7 @@
   
     <div>
       <label class="subtitle" for="finalidad">Finalidad:</label>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
+      <p>se escribe para qué se abordará el saber elegido, es decir, qué debe saber hacer el egresado del programa con ese saber</p>
       <textarea id="finalidad" type="text" formControlName="finalidad" maxlength="255"> </textarea>
       <div *ngIf="form.get('finalidad')?.errors && form.get('finalidad')?.touched">
         <small *ngIf="form.get('finalidad')?.errors?.['required']">La finalidad es requerida</small>
@@ -39,7 +38,7 @@
   
     <div>
       <label class="subtitle" for="condicion_contexto">Condición de Contexto:</label>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
+      <p>se escribe en qué condiciones, o bajo qué referentes, parámetros, principios, requerimientos o retos, actuará el egresado, de acuerdo con la acción que realizará con el saber y el saber hacer.</p>
       <textarea id="condicion_contexto" type="text" formControlName="condicion_contexto" maxlength="255"></textarea>
       <div *ngIf="form.get('condicion_contexto')?.errors && form.get('condicion_contexto')?.touched">
         <small *ngIf="form.get('condicion_contexto')?.errors?.['required']">La condición de contexto es requerida</small>
@@ -49,7 +48,7 @@
   
     <div>
       <label class="title" for="competencia">Competencia:</label>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
+      <p>Articular los componentes. Iniciar con el verbo, continuar con el objeto conceptual, luego la finalidad y condición de contexto o referencia; estos últimos no requieren un orden particular.</p>
       <textarea id="competencia" formControlName="competencia" maxlength="600"></textarea>
       <div *ngIf="form.get('competencia')?.errors && form.get('competencia')?.touched">
         <small *ngIf="form.get('competencia')?.errors?.['required']">La competencia es requerida</small>

@@ -2,6 +2,8 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div>
     <label class="title" for="">Profesional</label>
+    <p>Componentes fundamentales aplicables a la solución de problemas en la vida profesional</p>
+    <p>Listar, según lo escrito en los perfiles, qué debe saber el egresado en las categorías de Saber -conocimientos, hechos, teorías-, Saber hacer -técnicas, procedimientos, metodologías-, y Saber ser -valores, condiciones</p>
   </div>
   <!-- <div>
     <label for="id_programa">ID Programa:</label>
@@ -13,7 +15,6 @@
 
   <div>
     <label class="subtitle" for="saber">Saber:</label>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
     <textarea id="saber" formControlName="saber"
               [title]="'Ingrese el saber'"></textarea>
     <div *ngIf="form.get('saber')?.errors && form.get('saber')?.touched">
@@ -24,7 +25,6 @@
 
   <div>
     <label class="subtitle" for="saber_hacer">Saber Hacer:</label>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
     <textarea id="saber_hacer" formControlName="saber_hacer"
               [title]="'Ingrese el saber hacer'"></textarea>
     <div *ngIf="form.get('saber_hacer')?.errors && form.get('saber_hacer')?.touched">
@@ -35,7 +35,6 @@
 
   <div>
     <label class="subtitle" for="saber_ser">Saber Ser:</label>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
     <textarea id="saber_ser" formControlName="saber_ser"
               [title]="'Ingrese el saber ser'"></textarea>
     <div *ngIf="form.get('saber_ser')?.errors && form.get('saber_ser')?.touched">

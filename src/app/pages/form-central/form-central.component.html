@@ -101,4 +101,21 @@
     </div>
   </div>
 
+  <div
+  *ngIf="currentDiv === 'div7'"
+  class="slide"
+  [ngClass]="{
+'slide-out-left': isSlidingOut,
+'slide-in-left': isSlidingIn,
+'slide-out-right': isReturnOut,
+'slide-in-right': isReturnIn,
+}"
+>
+  <div class="button">
+    <app-res-aprendizaje (esFormularioValido)="form6($event)" />
+    <!-- <button (click)="morediv(2)">Continuar</button> -->
+    <button (click)="return(6)">Regresar</button>
+  </div>
+</div>
+
 </div>

@@ -5,13 +5,17 @@ import { Component } from '@angular/core';
   templateUrl: './form-central.component.html',
   styleUrl: './form-central.component.css'
 })
-export class FormCentralComponent {
+export class FormCentralComponent{
   currentDiv: string = 'div1';
   isSlidingOut: boolean = false;
   isSlidingIn: boolean = false;
   isReturnIn: boolean = false;
   isReturnOut: boolean = false;
   act:number=0;
+
+  constructor() {
+
+  }
 
   change(form:number){
     this.act=form;
@@ -91,6 +95,12 @@ export class FormCentralComponent {
   }
 
   form5(esValido: boolean) {
+    if(esValido){
+      this.morediv(7)
+    }
+  }
+
+  form6(esValido: boolean) {
     if(esValido){
       this.morediv(2)
     }

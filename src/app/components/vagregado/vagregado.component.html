@@ -14,7 +14,7 @@
   
     <div>
       <label for="v_agregado" class="subtitle">Valor Agregado:</label>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem officiis explicabo repudiandae commodi a provident possimus, consequatur illum recusandae velit eum sed. Maiores quae ex dignissimos nostrum, labore dolor.</p>
+      <p>Liste los elementos que son diferenciales y generan un valor agregado al egresado del programa. (Recuerde: es ese(os) elemento(s) diferencial(es) que caracteriza a un egresado del programa, esto es disciplinariamente, en comparación con egresados de programas del mismo tipo, ofertados por otras instituciones educativas.)</p>
       <textarea id="v_agregado" type="text" formControlName="v_agregado" maxlength="500"></textarea>
       <div *ngIf="form.get('v_agregado')?.errors && form.get('v_agregado')?.touched">
         <small *ngIf="form.get('v_agregado')?.errors?.['required']">El valor agregado es requerido</small>
