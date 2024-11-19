@@ -90,13 +90,13 @@ export class FormCentralComponent{
 
   form4(esValido: boolean) {
     if(esValido){
-      this.morediv(6)
+      this.morediv(2)
     }
   }
 
   form5(esValido: boolean) {
     if(esValido){
-      this.morediv(7)
+      this.morediv(6)
     }
   }
 

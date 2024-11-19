@@ -118,12 +118,14 @@ export class CompetenciasComponent implements OnInit {
 
   onSubmit() {
     if(this.containInfoFinal()){
+      this.form.get('objeto_conceptual')?.enable();
+      this.form.get('finalidad')?.enable();
+      this.form.get('condicion_contexto')?.enable();
       if (this.form.valid) {
-        localStorage.setItem('saber',this.form.value.saber)
-        localStorage.setItem('saber_hacer',this.form.value.saber_hacer)
-        localStorage.setItem('saber_ser',this.form.value.saber_ser)
+        
         localStorage.setItem('competencia',this.form.value.competencia)
         localStorage.setItem('saber_asociado',this.form.value.objeto_conceptual)
+        console.log(this.form.value.objeto_conceptual)
         console.log(this.form.value);
         this.esFormularioValido.emit(this.form.valid);
       } else {

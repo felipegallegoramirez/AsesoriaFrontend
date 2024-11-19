@@ -29,7 +29,7 @@
   <div class="button">
     <button (click)="morediv(3)">Agregar Saber</button>
     <button (click)="return(1)">Regresar</button>
-    <button >Finalizar</button>
+    <button (click)="morediv(6)">Finalizar</button>
   </div>
 </div>
 
@@ -85,7 +85,24 @@
   </div>
 
   <div
-    *ngIf="currentDiv === 'div6'"
+  *ngIf="currentDiv === 'div6'"
+  class="slide"
+  [ngClass]="{
+  'slide-out-left': isSlidingOut,
+  'slide-in-left': isSlidingIn,
+  'slide-out-right': isReturnOut,
+  'slide-in-right': isReturnIn,
+}"
+>
+  <div class="button">
+    <button (click)="morediv(7)">Agregar Competencias</button>
+    <button (click)="return(2)">Regresar</button>
+    <button (click)="morediv(8)">Finalizar</button>
+  </div>
+</div>
+
+  <div
+    *ngIf="currentDiv === 'div7'"
     class="slide"
     [ngClass]="{
 'slide-out-left': isSlidingOut,
@@ -102,7 +119,24 @@
   </div>
 
   <div
-  *ngIf="currentDiv === 'div7'"
+  *ngIf="currentDiv === 'div8'"
+  class="slide"
+  [ngClass]="{
+  'slide-out-left': isSlidingOut,
+  'slide-in-left': isSlidingIn,
+  'slide-out-right': isReturnOut,
+  'slide-in-right': isReturnIn,
+}"
+>
+  <div class="button">
+    <button (click)="morediv(9)">Agregar RA</button>
+    <button (click)="return(6)">Regresar</button>
+    <button >Finalizar</button>
+  </div>
+</div>
+
+  <div
+  *ngIf="currentDiv === 'div9'"
   class="slide"
   [ngClass]="{
 'slide-out-left': isSlidingOut,
