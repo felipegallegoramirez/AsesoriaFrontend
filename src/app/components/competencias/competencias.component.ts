@@ -1,5 +1,7 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { CompetenciasService } from '../../services/competencias.service';
+import { Competencias } from '../../models/competencias';
 
 @Component({
   selector: 'app-competencias',
@@ -14,7 +16,7 @@ export class CompetenciasComponent implements OnInit {
   filteredSuggestions: string[] = [];
   showSuggestions = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private competenciasService:CompetenciasService) {
     this.form = this.fb.group({
       //id_programa: ['', Validators.required],
       //id: ['', [Validators.required, Validators.maxLength(50)]],
@@ -78,14 +80,15 @@ export class CompetenciasComponent implements OnInit {
 
 
   ngOnInit() {
-    const saber = localStorage.getItem('saber') || ''
-    const saber_hacer =localStorage.getItem('saber_hacer')|| ''
-    const saber_ser =localStorage.getItem('saber_ser')|| ''
+    let status = localStorage.getItem('statusCode')
+    let data = this.competenciasService.read(Number(status))
 
     this.form.patchValue({
-      objeto_conceptual: saber,
-      finalidad: saber_hacer,
-      condicion_contexto:saber_ser,
+      verbo: data?.verbo,
+      objeto_conceptual: data?.objeto_conceptual,
+      finalidad: data?.finalidad,
+      condicion_contexto:data?.condicion_contexto,
+      competencia:data?.competencia,
     });
   }
 
@@ -122,11 +125,15 @@ export class CompetenciasComponent implements OnInit {
       this.form.get('finalidad')?.enable();
       this.form.get('condicion_contexto')?.enable();
       if (this.form.valid) {
-        
-        localStorage.setItem('competencia',this.form.value.competencia)
-        localStorage.setItem('saber_asociado',this.form.value.objeto_conceptual)
-        console.log(this.form.value.objeto_conceptual)
-        console.log(this.form.value);
+        let data = new Competencias()
+        data.verbo = this.form.value.verbo
+        data.objeto_conceptual = this.form.value.objeto_conceptual
+        data.finalidad = this.form.value.finalidad
+        data.condicion_contexto = this.form.value.condicion_contexto
+        data.competencia = this.form.value.competencia
+        data.id_programa = ''
+        let status = localStorage.getItem('statusCode')
+        this.competenciasService.update(Number(status),data)
         this.esFormularioValido.emit(this.form.valid);
       } else {
         console.log('Formulario inválido');

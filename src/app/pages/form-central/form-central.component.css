@@ -7,7 +7,6 @@
     overflow: hidden;
     overflow-x: hidden;
     border: 1px solid #ddd;
-    display: flex;
     align-items: center;
   }
   
@@ -18,6 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     transition: transform 0.5s ease-in-out;
     transform: translateX(0);
   }
@@ -43,7 +43,6 @@
     display: flex;
     flex-direction: column;
     width: 60vw;
-
   }
 
   .button>button{
@@ -62,4 +61,41 @@
     color: #0F385A;
     outline: 3px solid #0F385A;
     font-weight: bold;
+  }
+
+
+  .contenedor-lista {
+    position: relative;
+    padding: 20px 0px;
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-x: hidden;
+    border: 1px solid #ddd;
+    align-items: center;
+    width: 60vw;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+  }
+  
+  
+  button{
+    margin: 5px 10px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: #0F385A;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
   }

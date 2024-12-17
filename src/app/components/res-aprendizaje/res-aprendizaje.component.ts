@@ -1,5 +1,8 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { ResAprendizajeService } from '../../services/res-aprendizaje.service';
+import { ResAprendizaje } from '../../models/res-aprendizaje';
+
 @Component({
   selector: 'app-res-aprendizaje',
   templateUrl: './res-aprendizaje.component.html',
@@ -14,7 +17,7 @@ export class ResAprendizajeComponent {
   filteredSuggestions: string[] = [];
   showSuggestions = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private resAprendizajeService: ResAprendizajeService) {
     this.form = this.fb.group({
 //      id_restultado: ['', [Validators.required, Validators.maxLength(50)]],
       competencia: [{value:'',disabled:true}, [Validators.required, Validators.maxLength(600)]],
@@ -25,7 +28,7 @@ export class ResAprendizajeComponent {
       nivel_dominio: ['', [Validators.required, Validators.maxLength(20)]],
       verbo: ['', [Validators.required, Validators.maxLength(25), this.containVerb()]],
       resultado_ap: ['', [Validators.required, Validators.maxLength(600)]],
-      id_programa: ['', Validators.required]
+      //id_programa: ['', Validators.required]
     });
   }
 
@@ -44,6 +47,20 @@ export class ResAprendizajeComponent {
     this.form.patchValue({
       competencia: competencia,
       saber_asociado: saber_asociado,
+    });
+
+    let status = localStorage.getItem('statusCode')
+    let data = this.resAprendizajeService.read(Number(status))
+
+    this.form.patchValue({
+      competencia: data?.competencia,
+      tipo_saber: data?.tipo_saber,
+      saber_asociado: data?.saber_asociado,
+      taxonomia: data?.taxonomia,
+      dominio_tratar: data?.dominio_tratar,
+      nivel_dominio: data?.nivel_dominio,
+      verbo: data?.verbo,
+      resultado_ap: data?.resultado_ap,
     });
   }
 
@@ -74,7 +91,20 @@ export class ResAprendizajeComponent {
 
   onSubmit() {
     if (this.form.valid) {
-      console.log(this.form.value);
+        let data = new ResAprendizaje()
+        data.competencia = this.form.value.competencia
+        data.tipo_saber = this.form.value.tipo_saber
+        data.saber_asociado = this.form.value.saber_asociado
+        data.taxonomia = this.form.value.taxonomia
+        data.dominio_tratar = this.form.value.dominio_tratar
+        data.nivel_dominio = this.form.value.nivel_dominio
+        data.verbo = this.form.value.verbo
+        data.resultado_ap = this.form.value.resultado_ap
+
+        data.id_resultado = ''
+        
+        let status = localStorage.getItem('statusCode')
+        this.resAprendizajeService.update(Number(status),data)
       this.esFormularioValido.emit(this.form.valid);
     } else {
       console.log('Formulario inválido');
