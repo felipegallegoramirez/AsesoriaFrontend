@@ -49,7 +49,7 @@ export class InstMedicionService {
     }
   }
 
-  private baseUrl = environment.apiUrl + '/inst-medicion';
+  private baseUrl = environment.apiUrl + '/Inst-medicion';
 
   constructor(private http: HttpClient) {}
 

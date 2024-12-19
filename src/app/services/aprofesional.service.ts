@@ -49,7 +49,7 @@ export class AprofesionalService {
     }
   }
 
-  private baseUrl = environment.apiUrl + '/a-profesional';
+  private baseUrl = environment.apiUrl + '/AProfesional';
 
   constructor(private http: HttpClient) {}
 

@@ -49,7 +49,7 @@ export class PerfilEgresoService {
     }
   }
 
-  private baseUrl = environment.apiUrl + '/perfil-egreso';
+  private baseUrl = environment.apiUrl + '/perfil_egreso';
 
   constructor(private http: HttpClient) {}
 

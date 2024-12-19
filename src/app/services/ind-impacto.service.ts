@@ -49,7 +49,7 @@ export class IndImpactoService {
     }
   }
 
-  private baseUrl = environment.apiUrl + '/ind-impacto';
+  private baseUrl = environment.apiUrl + '/Ind-impacto';
 
   constructor(private http: HttpClient) {}
 

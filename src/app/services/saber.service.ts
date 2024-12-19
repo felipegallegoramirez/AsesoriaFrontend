@@ -49,7 +49,7 @@ export class SaberService {
     }
   }
 
-  private baseUrl = environment.apiUrl + '/saber';
+  private baseUrl = environment.apiUrl + '/Sabers';
 
   constructor(private http: HttpClient) {}
 

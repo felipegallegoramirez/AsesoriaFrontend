@@ -5,6 +5,7 @@ import { AtprofesionalesService } from '../../services/atprofesionales.service';
 import { VagregadoService } from '../../services/vagregado.service';
 import { CompetenciasService } from '../../services/competencias.service';
 import { ResAprendizajeService } from '../../services/res-aprendizaje.service';
+import { PerfilEgresoService } from '../../services/perfil-egreso.service';
 
 
 import { Saber } from '../../models/saber';
@@ -12,6 +13,8 @@ import { ATProfesionales } from '../../models/atprofesionales';
 import { VAgregado } from '../../models/vagregado';
 import { Competencias } from '../../models/competencias';
 import { ResAprendizaje } from '../../models/res-aprendizaje';
+import { PerfilEgreso } from '../../models/perfil-egreso';
+
 
 
 
@@ -44,7 +47,8 @@ export class FormCentralComponent implements OnInit{
     private competenciasService: CompetenciasService,
     private resAprendizajeService: ResAprendizajeService,
     private atprofesionalesService: AtprofesionalesService,
-    private vagregadoService: VagregadoService
+    private vagregadoService: VagregadoService,
+    private perfilEgresoService: PerfilEgresoService
   ) {
 
   }
@@ -228,8 +232,33 @@ export class FormCentralComponent implements OnInit{
       }
     }
     if(pas){
-    
-      
+      let perfil = this.perfilEgresoService.getAll()
+      let saber = this.saberService.getAll()
+      let atprofesional = this.atprofesionalesService.getAll()
+      let vagregado = this.vagregadoService.getAll()
+      let competencias = this.competenciasService.getAll()
+      let resAprendizaje = this.resAprendizajeService.getAll()
+
+      this.perfilEgresoService.createbd(perfil[0]).subscribe(res=>{})
+
+      for(let i = 0 ; i < saber.length ; i++){
+        this.saberService.createbd(saber[i]).subscribe(res=>{})
+      }
+
+      for(let i = 0 ; i < atprofesional.length ; i++){
+        this.atprofesionalesService.createbd(atprofesional[i]).subscribe(res=>{})
+      }
+      for(let i = 0 ; i < vagregado.length ; i++){
+        this.vagregadoService.createbd(vagregado[i]).subscribe(res=>{})
+      }
+      for(let i = 0 ; i < competencias.length ; i++){
+        this.competenciasService.createbd(competencias[i]).subscribe(res=>{})
+      }
+      for(let i = 0 ; i < resAprendizaje.length ; i++){
+        this.resAprendizajeService.createbd(resAprendizaje[i]).subscribe(res=>{})
+      }
+
+
 
 
     }else{

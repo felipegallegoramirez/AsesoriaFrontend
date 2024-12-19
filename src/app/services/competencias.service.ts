@@ -49,7 +49,7 @@ export class CompetenciasService {
     }
   }
 
-  private baseUrl = environment.apiUrl + '/competencias';
+  private baseUrl = environment.apiUrl + '/Competencias';
 
   constructor(private http: HttpClient) {}
 

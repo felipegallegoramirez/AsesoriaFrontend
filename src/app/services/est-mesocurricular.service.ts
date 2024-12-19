@@ -49,7 +49,7 @@ export class EstMesocurricularService {
     }
   }
 
-  private baseUrl = environment.apiUrl + '/est-mesocurricular';
+  private baseUrl = environment.apiUrl + '/Est_mesocurricular';
 
   constructor(private http: HttpClient) {}
 

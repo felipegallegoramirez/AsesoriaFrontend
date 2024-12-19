@@ -49,7 +49,7 @@ export class ResAprendizajeService {
     }
   }
 
-  private baseUrl = environment.apiUrl + '/res-aprendizaje';
+  private baseUrl = environment.apiUrl + '/Res-aprendizaje';
 
   constructor(private http: HttpClient) {}
 

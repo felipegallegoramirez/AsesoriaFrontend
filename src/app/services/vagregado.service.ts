@@ -49,7 +49,7 @@ export class VagregadoService {
     }
   }
 
-  private baseUrl = environment.apiUrl + '/vagregado';
+  private baseUrl = environment.apiUrl + '/VAgregadoes';
 
   constructor(private http: HttpClient) {}
 

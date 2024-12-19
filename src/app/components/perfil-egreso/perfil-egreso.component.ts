@@ -1,5 +1,8 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PerfilEgresoService } from '../../services/perfil-egreso.service';
+import { PerfilEgreso } from '../../models/perfil-egreso';
+
 
 @Component({
   selector: 'app-perfil-egreso',
@@ -10,7 +13,7 @@ export class PerfilEgresoComponent  implements OnInit{
   programas: any[] = [];
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private perfilEgresoService: PerfilEgresoService) {
     this.form = this.fb.group({
       //id_programa: ['', [Validators.required, Validators.maxLength(255)]],
       //id: ['', [Validators.required, Validators.maxLength(50)]],
@@ -21,12 +24,21 @@ export class PerfilEgresoComponent  implements OnInit{
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    this.perfilEgresoService.deleteAll()
+
+  }
 
   @Output() esFormularioValido = new EventEmitter<boolean>();
 
   onSubmit() {
     if (this.form.valid) {
+      let data = new PerfilEgreso()
+      data.nombre_programa = this.form.value.nombre_programa
+      data.nmodalidad = this.form.value.nmodalidad
+      data.perfil_profesional = this.form.value.perfil_profesional
+      data.perfil_ocupacional = this.form.value.perfil_ocupacional
       this.esFormularioValido.emit(this.form.valid);
       console.log(this.form.value);
     } else {

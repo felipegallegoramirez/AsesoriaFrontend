@@ -49,7 +49,7 @@ export class AcRetroalService {
     }
   }
 
-  private baseUrl = environment.apiUrl + '/ac-retroal';
+  private baseUrl = environment.apiUrl + '/Ac_retroal';
 
   constructor(private http: HttpClient) {}
 

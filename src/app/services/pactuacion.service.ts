@@ -49,7 +49,7 @@ export class PactuacionService {
     }
   }
 
-  private baseUrl = environment.apiUrl + '/p-actuacion';
+  private baseUrl = environment.apiUrl + '/PActuacion';
 
   constructor(private http: HttpClient) {}
 
